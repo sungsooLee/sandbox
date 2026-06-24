@@ -1,0 +1,103 @@
+.grid_table_box {
+  @apply overflow-hidden;
+
+  .grid_table_wrap {
+    @apply overflow-x-auto;
+
+    .grid_table_top {
+      @apply mb-3 flex items-center justify-between gap-4;
+
+      .grid_table_title {
+        @apply m-0 text-[18px] font-bold text-[#111827];
+
+        em {
+          @apply ml-1 inline-block text-[#1572ED] not-italic;
+        }
+      }
+
+      .grid_table_meta {
+        @apply flex shrink-0 items-center text-[13px] text-[#6B7280];
+      }
+
+      .grid_table_unit {
+        @apply text-[14px] text-[#4C4F58];
+      }
+
+      .grid_table_more {
+        @apply relative ml-3 pl-3 text-[#292B2F] no-underline;
+
+        &:hover {
+          @apply text-[#374151];
+        }
+
+        &::before {
+          content: "";
+          @apply absolute left-0 top-1/2 h-4 w-px -translate-y-1/2 bg-[#DEE2E6];
+        }
+      }
+    }
+
+    .grid_table {
+      @apply w-full table-fixed border-collapse text-[14px] text-[#374151];
+
+      th,
+      td {
+        @apply border-b border-[#ECEEF1] px-3 py-4 align-middle;
+
+        &:not(:first-child) {
+          @apply border-l border-[#ECEEF1];
+        }
+      }
+
+      thead {
+        th {
+          @apply border-t border-[#ECEEF1] bg-[#F3F6FF] px-3 py-2 text-center text-[14px] font-semibold whitespace-nowrap text-[#292B2F];
+
+          &.align_left {
+            @apply text-left;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          @apply bg-white p-3 text-[14px] leading-[1.5] text-[#4B5563];
+
+          &.align_left {
+            @apply text-left;
+          }
+
+          &.center {
+            @apply text-center;
+          }
+        }
+      }
+
+      .th_inner {
+        @apply inline-flex items-center justify-center gap-1;
+      }
+
+      .sort_icon {
+        @apply inline-flex h-6 w-6 shrink-0 cursor-pointer items-center justify-center border-none bg-transparent p-0 m-0;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 5px solid #9ca3af;
+        }
+
+        &:hover::before {
+          border-top-color: #292b2f;
+        }
+
+        &:focus-visible {
+          @apply rounded outline-2 outline-offset-1 outline-[#1572ED];
+        }
+      }
+    }
+  }
+}
