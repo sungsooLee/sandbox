@@ -1,0 +1,20 @@
+.report_wrap {
+  .report_list {
+    @apply flex items-center flex-wrap;
+
+    .report_item {
+      .title {
+        font-size: 14px;
+        color: #72747b;
+      }
+
+      .answer_wrap {
+        p {
+          font-size: 14px;
+          font-weight: 700;
+          color: #292b2f;
+        }
+      }
+    }
+  }
+}
